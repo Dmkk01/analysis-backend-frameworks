@@ -20,7 +20,7 @@ const getFibonacciList = () => {
     nextTerm = n1 + n2
     n1 = n2
     n2 = nextTerm
-    numbers[i] = n1
+    numbers[i] = str(n1)
   }
 
   return numbers
