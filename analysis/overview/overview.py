@@ -1,4 +1,9 @@
 import matplotlib.pyplot as plt
+import sys
+from os.path import dirname, join, abspath
+sys.path.insert(0, abspath(join(dirname(__file__), '..')))
+
+from utils.colors import backend_colors
 
 def make_plot(data, names, xlabel, color):
     fig, ax = plt.subplots()
@@ -15,16 +20,16 @@ def make_plot(data, names, xlabel, color):
 
 javascript = [58400, 33100, 43000, 14000]
 javascript_names = ['Express','Koa','Meteor', 'Hapi']
-make_plot(javascript, javascript_names, 'Javascript (Node.js runtime) frameworks', 'orange')
+make_plot(javascript, javascript_names, 'Javascript (Node.js runtime) frameworks', backend_colors["express"])
 
 python = [66600, 49700, 60600]
 python_names = ['Django', 'FastAPI', 'Flask'] 
-make_plot(python, python_names, 'Python frameworks', 'yellow')
+make_plot(python, python_names, 'Python frameworks', backend_colors["django"])
 
 java = [49200, 1200, 2700, 12200]
 java_names = ['Sprng', 'Struts', 'Grails', 'Play']
-make_plot(java, java_names, 'Java frameworks', 'red')
+make_plot(java, java_names, 'Java frameworks', backend_colors["spring"])
 
 golang = [63000, 28900, 23800, 23900, 18400]
 golang_names = ['Gin', 'Beego', 'Echo', 'Kit', 'Fasthttp']
-make_plot(golang, golang_names, 'Golang frameworks', 'blue')
+make_plot(golang, golang_names, 'Golang frameworks', backend_colors["gin"])
